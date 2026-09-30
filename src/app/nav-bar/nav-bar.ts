@@ -16,9 +16,7 @@ export class NavBar {
     { label: 'About Me', href: '#about' },
     { label: 'Skills', href: '#skills' },
     { label: 'Projects', href: '#projects' },
-    { label: 'Experiences', href: '#experiences' },
     { label: 'Education', href: '#education' },
-    { label: 'Services', href: '#services' },
     { label: 'Tech Stack', href: '#tech-stack' },
     { label: 'Contact', href: '#contact' },
   ];

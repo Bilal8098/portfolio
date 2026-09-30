@@ -1,0 +1,330 @@
+  /* ---------- Design Tokens ---------- */
+    :host {
+      --bg-main: #080B12;
+      --bg-secondary: #0F141D;
+      --bg-card: #151B26;
+      --border: #252D3A;
+      --text-primary: #F1F5F9;
+      --text-secondary: #94A3B8;
+      --accent: #22D3EE;
+      --accent-hover: #67E8F9;
+      --success: #34D399;
+    }
+
+    /* ---------- Section ---------- */
+   
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    /* ---------- Section Header ---------- */
+    .section-header {
+      text-align: center;
+      margin-bottom: 4.5rem;
+      max-width: 720px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .section-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--accent);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 1.25rem;
+      font-family: 'JetBrains Mono', ui-monospace, monospace;
+    }
+
+    .tag-line {
+      display: inline-block;
+      width: 32px;
+      height: 2px;
+      background: var(--accent);
+      border-radius: 2px;
+    }
+
+    .section-title {
+      font-size: clamp(2rem, 4vw, 2.75rem);
+      font-weight: 800;
+      color: var(--text-primary);
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      margin: 0 0 1rem;
+    }
+
+    .title-accent {
+      background: linear-gradient(135deg, var(--accent) 0%, var(--success) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .section-subtitle {
+      font-size: 1rem;
+      line-height: 1.7;
+      color: var(--text-secondary);
+      margin: 0;
+    }
+
+    /* ---------- Grid ---------- */
+    .tech-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 1.5rem;
+    }
+
+    /* ---------- Card ---------- */
+    .tech-card {
+      position: relative;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 1.5rem;
+      overflow: hidden;
+      transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+      animation: fadeInUp 0.6s ease-out both;
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .tech-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(34, 211, 238, 0.4);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(34, 211, 238, 0.15);
+    }
+
+    .tech-card.accent-emerald:hover {
+      border-color: rgba(52, 211, 153, 0.4);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(52, 211, 153, 0.15);
+    }
+
+    .card-glow {
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle at center, rgba(34, 211, 238, 0.06) 0%, transparent 50%);
+      opacity: 0;
+      transition: opacity 0.4s ease;
+      pointer-events: none;
+    }
+
+    .accent-emerald .card-glow {
+      background: radial-gradient(circle at center, rgba(52, 211, 153, 0.06) 0%, transparent 50%);
+    }
+
+    .tech-card:hover .card-glow {
+      opacity: 1;
+    }
+
+    /* ---------- Card Header ---------- */
+    .card-header {
+      display: flex;
+      align-items: center;
+      gap: 0.9rem;
+      margin-bottom: 1.25rem;
+      padding-bottom: 1.25rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .card-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      flex-shrink: 0;
+      background: rgba(34, 211, 238, 0.08);
+      border: 1px solid rgba(34, 211, 238, 0.2);
+      border-radius: 12px;
+      color: var(--accent);
+      transition: all 0.3s ease;
+    }
+
+    .accent-emerald .card-icon {
+      background: rgba(52, 211, 153, 0.08);
+      border-color: rgba(52, 211, 153, 0.2);
+      color: var(--success);
+    }
+
+    .tech-card:hover .card-icon {
+      transform: scale(1.06);
+      background: rgba(34, 211, 238, 0.15);
+      border-color: var(--accent);
+    }
+
+    .accent-emerald:hover .card-icon {
+      background: rgba(52, 211, 153, 0.15);
+      border-color: var(--success);
+    }
+
+    .card-titles {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .card-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin: 0 0 0.2rem;
+      line-height: 1.3;
+      letter-spacing: -0.01em;
+    }
+
+    .card-subtitle {
+      font-size: 0.78rem;
+      color: var(--text-secondary);
+      margin: 0;
+      line-height: 1.4;
+    }
+
+    /* ---------- Tech Chips ---------- */
+    .tech-chips {
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+
+    .tech-chip {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.7rem;
+      padding: 0.7rem 0.85rem;
+      background: rgba(15, 20, 29, 0.6);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      transition: all 0.25s ease;
+      cursor: default;
+    }
+
+    .tech-chip:hover {
+      background: rgba(34, 211, 238, 0.05);
+      border-color: rgba(34, 211, 238, 0.3);
+      transform: translateX(4px);
+    }
+
+    .accent-emerald .tech-chip:hover {
+      background: rgba(52, 211, 153, 0.05);
+      border-color: rgba(52, 211, 153, 0.3);
+    }
+
+    .chip-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+      flex-shrink: 0;
+      margin-top: 0.45rem;
+      box-shadow: 0 0 8px rgba(34, 211, 238, 0.6);
+      transition: transform 0.25s ease;
+    }
+
+    .accent-emerald .chip-dot {
+      background: var(--success);
+      box-shadow: 0 0 8px rgba(52, 211, 153, 0.6);
+    }
+
+    .tech-chip:hover .chip-dot {
+      transform: scale(1.4);
+    }
+
+    .chip-content {
+      display: flex;
+      flex-direction: column;
+      gap: 0.15rem;
+      min-width: 0;
+    }
+
+    .chip-name {
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      line-height: 1.3;
+      letter-spacing: -0.01em;
+    }
+
+    .chip-desc {
+      font-size: 0.75rem;
+      color: var(--text-secondary);
+      line-height: 1.4;
+    }
+
+    /* ---------- Responsive ---------- */
+    @media (max-width: 900px) {
+      .techstack {
+        padding: 80px 1.25rem;
+      }
+
+      .section-header {
+        margin-bottom: 3rem;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .techstack {
+        padding: 60px 1rem;
+      }
+
+      .section-tag {
+        font-size: 0.72rem;
+        letter-spacing: 1.5px;
+      }
+
+      .tech-grid {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+      }
+
+      .tech-card {
+        padding: 1.25rem;
+      }
+
+      .card-header {
+        gap: 0.75rem;
+        margin-bottom: 1rem;
+        padding-bottom: 1rem;
+      }
+
+      .card-icon {
+        width: 40px;
+        height: 40px;
+      }
+
+      .card-title {
+        font-size: 1rem;
+      }
+
+      .tech-chip {
+        padding: 0.6rem 0.75rem;
+      }
+
+      .chip-name {
+        font-size: 0.84rem;
+      }
+
+      .chip-desc {
+        font-size: 0.72rem;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .tech-card,
+      .card-icon,
+      .card-glow,
+      .tech-chip,
+      .chip-dot {
+        animation: none;
+        transition: none;
+      }
+    }
