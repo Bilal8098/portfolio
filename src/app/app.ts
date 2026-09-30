@@ -2,9 +2,11 @@ import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { NavBar } from './nav-bar/nav-bar';
 import { MainSection } from './main-section/main-section';
+import { Education } from './education/education';
+import { Skills } from './skills/skills';
 
 @Component({
-  imports: [RouterOutlet, NavBar, MainSection],
+  imports: [RouterOutlet, NavBar, MainSection, Education, Skills],
   selector: 'app-root',
   styleUrl: './app.css',
   templateUrl: './app.html',

@@ -1,0 +1,115 @@
+    <section class="skills" id="skills">
+      <!-- Background Effects -->
+      <div class="skills-bg">
+        <div class="glow glow-1"></div>
+        <div class="glow glow-2"></div>
+      </div>
+
+      <div class="container">
+        <!-- Section Header -->
+        <div class="section-header">
+          <span class="section-tag">
+            <span class="tag-line"></span>
+            02. Skills
+          </span>
+          <h2 class="section-title">
+            My <span class="title-accent">Skills</span>
+          </h2>
+          <p class="section-subtitle">
+            A blend of technical expertise and soft skills developed through
+            hands-on projects and continuous learning.
+          </p>
+        </div>
+
+        <!-- Skills Grid -->
+        <div class="skills-grid">
+          <div
+            class="skill-card"
+            *ngFor="let category of skillCategories; let i = index"
+            [class.accent-emerald]="category.accent === 'emerald'"
+            [style.animation-delay.ms]="i * 80"
+          >
+            <div class="card-glow"></div>
+
+            <!-- Card Header -->
+            <div class="card-header">
+              <div class="card-icon">
+                <!-- Code -->
+                <svg *ngIf="category.icon === 'code'" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="16 18 22 12 16 6"></polyline>
+                  <polyline points="8 6 2 12 8 18"></polyline>
+                </svg>
+                <!-- Server -->
+                <svg *ngIf="category.icon === 'server'" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect>
+                  <rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect>
+                  <line x1="6" y1="6" x2="6.01" y2="6"></line>
+                  <line x1="6" y1="18" x2="6.01" y2="18"></line>
+                </svg>
+                <!-- Database -->
+                <svg *ngIf="category.icon === 'database'" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+                  <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
+                  <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
+                </svg>
+                <!-- Mobile -->
+                <svg *ngIf="category.icon === 'mobile'" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
+                  <line x1="12" y1="18" x2="12.01" y2="18"></line>
+                </svg>
+                <!-- Desktop -->
+                <svg *ngIf="category.icon === 'desktop'" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                  <line x1="8" y1="21" x2="16" y2="21"></line>
+                  <line x1="12" y1="17" x2="12" y2="21"></line>
+                </svg>
+                <!-- Test -->
+                <svg *ngIf="category.icon === 'test'" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M9 11l3 3L22 4"></path>
+                  <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
+                </svg>
+                <!-- Analysis -->
+                <svg *ngIf="category.icon === 'analysis'" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="18" y1="20" x2="18" y2="10"></line>
+                  <line x1="12" y1="20" x2="12" y2="4"></line>
+                  <line x1="6" y1="20" x2="6" y2="14"></line>
+                </svg>
+                <!-- Management -->
+                <svg *ngIf="category.icon === 'management'" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M9 11H3v10h6V11z"></path>
+                  <path d="M15 3H9v18h6V3z"></path>
+                  <path d="M21 7h-6v14h6V7z"></path>
+                </svg>
+                <!-- Soft -->
+                <svg *ngIf="category.icon === 'soft'" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="9" cy="7" r="4"></circle>
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                </svg>
+              </div>
+              <div class="card-titles">
+                <h3 class="card-title">{{ category.title }}</h3>
+                <p class="card-subtitle">{{ category.subtitle }}</p>
+              </div>
+            </div>
+
+            <!-- Skill Bars -->
+            <div class="skill-list">
+              <div class="skill-item" *ngFor="let skill of category.skills">
+                <div class="skill-info">
+                  <span class="skill-name">{{ skill.name }}</span>
+                  <span class="skill-level">{{ skill.level }}%</span>
+                </div>
+                <div class="skill-bar">
+                  <div
+                    class="skill-bar-fill"
+                    [style.width.%]="skill.level"
+                  ></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>

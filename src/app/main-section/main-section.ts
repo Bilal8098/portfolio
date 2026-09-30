@@ -13,6 +13,7 @@ import { lucideBraces, lucideDatabase, lucideLeaf } from '@ng-icons/lucide';
 })
 export class MainSection implements AfterViewInit {
   @ViewChild('heroImage') heroImage?: ElementRef;
+  yearsCoding = new Date().getFullYear() - 2023;
 
   ngAfterViewInit(): void {
     // Optional: Add subtle parallax effect on mouse move
