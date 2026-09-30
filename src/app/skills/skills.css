@@ -15,7 +15,6 @@
     .skills {
       position: relative;
       padding: 120px 2rem;
-      background: var(--bg-main);
       overflow: hidden;
       isolation: isolate;
     }
