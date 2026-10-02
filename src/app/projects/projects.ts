@@ -53,9 +53,24 @@ export class Projects {
 
       images: [
         'hr.png',
-        'assets/images/projects/hr-management/2.jpg',
-        'assets/images/projects/hr-management/3.jpg',
-        'assets/images/projects/hr-management/4.jpg',
+        'hr-1.png',
+        'hr-2.png',
+        'hr-3.png',
+        'hr-4.png',
+        'hr-5.png',
+        'hr-6.png',
+        'hr-7.png',
+        'hr-8.png',
+        'hr-9.png',
+        'hr-10.png',
+        'hr-11.png',
+        'hr-12.png',
+        'hr-13.png',
+        'hr-14.png',
+        'hr-15.png',
+        'hr-16.png',
+        'hr-17.png',
+        'hr-18.png'
       ],
 
       accent: 'cyan',
